@@ -16,7 +16,7 @@ import java.util.List;
 import java.util.Objects;
 
 import static cc.ranmc.farm.constant.FarmConstant.PANE;
-import static cc.ranmc.utils.BasicUtil.THY_PREFIX;
+import static cc.ranmc.utils.BasicUtil.PREFIX;
 
 public class FarmUtil {
 
@@ -108,10 +108,10 @@ public class FarmUtil {
                     inventory.setItem(i, new ItemStack(Material.AIR));
                     if (BasicUtil.isInventoryFull(player)) {
                         player.getWorld().dropItem(player.getLocation(), item);
-                        player.sendMessage(THY_PREFIX + color("&c请勿放入非作物,已掉落地面"));
+                        player.sendMessage(PREFIX + color("&c请勿放入非作物,已掉落地面"));
                     } else {
                         player.getInventory().addItem(item);
-                        player.sendMessage(THY_PREFIX + color("&c请勿放入非作物,已返还背包"));
+                        player.sendMessage(PREFIX + color("&c请勿放入非作物,已返还背包"));
                     }
                 }
             }
