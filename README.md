@@ -3,7 +3,7 @@
 [![MIT License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 [![Paper 1.21](https://img.shields.io/badge/Paper-1.21-blue)](https://papermc.io)
 [![Java 26](https://img.shields.io/badge/Java-26-orange)](https://adoptium.net)
-[![bStats](https://img.shields.io/badge/bStats-32739-ff69b4)](https://bstats.org)
+[![bStats](https://img.shields.io/badge/bStats-32739-ff69b4)](https://bstats.org/plugin/bukkit/FarmInventory/32739)
 
 > 我的世界自动收集农作物并存入可视化仓库插件。
 
@@ -12,9 +12,9 @@
 ## 功能特色
 
 - **自动收集** — 破坏农作物时自动收入仓库，告别满地掉落物
-- **可视化 GUI** — 54 格图形界面，分页浏览，上限 50 页
+- **可视化 GUI** — 54 格图形界面，分页浏览
 - **数据持久化** — 基于 H2 数据库，数据安全可靠
-- **PAPI 支持** — 提供 `%fm_<作物>%` 变量，方便展示库存
+- **PAPI 支持** — 提供 `%fm_<作物>%` 变量
 - **权限分级** — VIP/SVIP/普通玩家不同仓库容量上限
 
 ---
