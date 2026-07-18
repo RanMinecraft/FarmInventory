@@ -3,7 +3,6 @@ package cc.ranmc.farm.command;
 import cc.ranmc.farm.Main;
 import cc.ranmc.farm.bean.SQLRow;
 import cc.ranmc.farm.constant.SQLKey;
-import cc.ranmc.farm.bean.SQLFilter;
 import cc.ranmc.farm.util.DataUtil;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;

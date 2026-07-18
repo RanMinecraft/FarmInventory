@@ -7,10 +7,11 @@ import cc.ranmc.farm.command.FarmCommand;
 import cc.ranmc.farm.listener.FarmListener;
 import cc.ranmc.farm.papi.Papi;
 import cc.ranmc.farm.papi.RanmcPapi;
-import cc.ranmc.farm.sql.Database;
 import cc.ranmc.farm.util.DataUtil;
 import cc.ranmc.papi.PapiAPI;
 import lombok.Getter;
+
+import org.bstats.bukkit.Metrics;
 import org.bukkit.Bukkit;
 import org.bukkit.event.Listener;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -33,7 +34,7 @@ public class Main extends JavaPlugin implements Listener {
 		instance = this;
 		color("§e-----------------------");
 		color("§bFarmInventory §dBy Ranica");
-		color("§bVersion: " + getDescription().getVersion());
+		color("§bVersion: " + getPluginMeta().getVersion());
 		color("§chttps://www.ranmc.cc/");
 		color("§e-----------------------");
 	    
@@ -48,6 +49,9 @@ public class Main extends JavaPlugin implements Listener {
 
 		// 加载配置
 		loadConfig();
+
+		// BStat
+		new Metrics(this, 32739);
         
 		super.onEnable();
 	}
