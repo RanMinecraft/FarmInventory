@@ -14,7 +14,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-import static cc.ranmc.utils.BasicUtil.print;
+import static cc.ranmc.farm.util.FarmUtil.print;
 
 public class Database {
 
