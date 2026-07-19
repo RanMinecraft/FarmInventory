@@ -13,6 +13,14 @@ permissions:
     default: true
     description: 'user only'
 
+  fm.vip:
+    default: op
+    description: 'vip only'
+
+  fm.svip:
+    default: op
+    description: 'svip only'
+
   fm.admin:
     default: op
     description: 'admin only'

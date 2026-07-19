@@ -24,8 +24,8 @@ public class FarmUtil {
      * 打开农作物仓库菜单
      */
     public static void openCropGUI(Player player, String cropStr, int page) {
-        if (page > 20 && !player.hasPermission("ranmc.vip")) page = 20;
-        if (page > 30 && !player.hasPermission("ranmc.svip")) page = 30;
+        if (page > 20 && !player.hasPermission("fm.vip")) page = 20;
+        if (page > 30 && !player.hasPermission("fm.svip")) page = 30;
         if (page > 50) page = 50;
         if (page < 1) page = 1;
 
@@ -37,8 +37,7 @@ public class FarmUtil {
         }
         SQLRow playerRow = DataUtil.getPlayerData(player);
         int count = playerRow.getInt(cropStr, 0);
-        Inventory inventory = Bukkit.createInventory(null, 54,
-                color("&b&l作物仓库"));
+        Inventory inventory = Bukkit.createInventory(null, 54, color("&b&l作物仓库"));
 
         inventory.setItem(45, getItem(Material.RED_STAINED_GLASS_PANE, 1, "&c关闭菜单"));
         inventory.setItem(46, PANE);
