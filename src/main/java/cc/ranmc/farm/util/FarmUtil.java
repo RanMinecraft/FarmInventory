@@ -40,7 +40,7 @@ public class FarmUtil {
         Inventory inventory = Bukkit.createInventory(null, 54,
                 color("&b&l作物仓库"));
 
-        inventory.setItem(45, getItem(Material.RED_STAINED_GLASS_PANE, 1, "&c返回菜单"));
+        inventory.setItem(45, getItem(Material.RED_STAINED_GLASS_PANE, 1, "&c关闭菜单"));
         inventory.setItem(46, PANE);
         inventory.setItem(47, getItem(Material.PAPER, 1,
                 "&b当前页数 " + page, "&e左键切换上页", "&e右键跳转首页"));

@@ -5,7 +5,6 @@ import cc.ranmc.farm.constant.SQLKey;
 import cc.ranmc.farm.bean.SQLRow;
 import cc.ranmc.farm.util.DataUtil;
 import cc.ranmc.farm.util.FarmUtil;
-import cc.ranmc.utils.MenuUtil;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.entity.Item;
@@ -94,9 +93,7 @@ public class FarmListener implements Listener {
             }
             if (event.getRawSlot() == 45) {
                 FarmUtil.save(player, inventory);
-                if (Main.getInstance().isRanmc()) {
-                    MenuUtil.open(player, "farm");
-                } else player.closeInventory();
+                player.closeInventory();
                 return;
             }
             ItemStack item = inventory.getItem(49);

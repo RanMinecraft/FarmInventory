@@ -21,8 +21,6 @@ public class Main extends JavaPlugin implements Listener {
 
 	@Getter
 	private static Main instance;
-	@Getter
-	private boolean ranmc = false;
 	
 	/**
 	 * 插件启动
