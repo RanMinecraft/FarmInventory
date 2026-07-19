@@ -48,7 +48,7 @@ public class FarmCommand implements CommandExecutor {
                 SQLRow playerRow = DataUtil.getPlayerData(player);
                 boolean open = playerRow.getBoolean(SQLKey.OPEN, true);
                 DataUtil.setPlayerOpen(player, !open);
-                player.sendMessage(color("&b桃花源>>>&e你已" + (open ? "关闭" : "打开") + "作物仓库"));
+                player.sendMessage(color("&e你已" + (open ? "关闭" : "打开") + "作物仓库"));
                 return true;
             }
 

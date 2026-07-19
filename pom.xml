@@ -129,14 +129,6 @@
         </dependency>
 
         <dependency>
-            <groupId>cc.ranmc</groupId>
-            <artifactId>Ranmc</artifactId>
-            <version>Release</version>
-            <scope>system</scope>
-            <systemPath>/users/rain/Desktop/Project/Ranmc.jar</systemPath>
-        </dependency>
-
-        <dependency>
             <groupId>org.bstats</groupId>
             <artifactId>bstats-bukkit</artifactId>
             <version>3.2.1</version>

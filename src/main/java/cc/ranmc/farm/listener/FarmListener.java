@@ -41,7 +41,7 @@ public class FarmListener implements Listener {
      */
     @EventHandler
     public void onInventoryClose(InventoryCloseEvent event) {
-        if (!event.getView().getTitle().equals(color("&d&l桃花源丨作物仓库"))) {
+        if (!event.getView().getTitle().equals(color("&b&l作物仓库"))) {
             return;
         }
         Player player = (Player) event.getPlayer();
@@ -58,7 +58,7 @@ public class FarmListener implements Listener {
 
         Player player = (Player) event.getWhoClicked();
         ItemStack clicked = event.getCurrentItem();
-        if (event.getView().getTitle().equals(color("&d&l桃花源丨作物仓库"))) {
+        if (event.getView().getTitle().equals(color("&b&l作物仓库"))) {
             Inventory inventory = event.getClickedInventory();
             if (inventory == null) return;
             if (event.getRawSlot() >= 45 &&
@@ -152,7 +152,7 @@ public class FarmListener implements Listener {
             Bukkit.getGlobalRegionScheduler().runDelayed(plugin, _ -> {
                 noteList.remove(player.getName());
                 if (!noteList.contains(player.getName())) {
-                    player.sendMessage(color("&b桃花源>>>&a作物已存放仓库,打开菜单查看吧"));
+                    player.sendMessage(color("&a作物已存放仓库,打开菜单查看吧"));
                 }
             }, 80);
             noteList.add(player.getName());

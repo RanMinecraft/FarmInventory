@@ -3,7 +3,6 @@ package cc.ranmc.farm.util;
 import cc.ranmc.farm.Main;
 import cc.ranmc.farm.bean.Crop;
 import cc.ranmc.farm.bean.SQLRow;
-import cc.ranmc.utils.BasicUtil;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
@@ -16,7 +15,6 @@ import java.util.List;
 import java.util.Objects;
 
 import static cc.ranmc.farm.constant.FarmConstant.PANE;
-import static cc.ranmc.utils.BasicUtil.PREFIX;
 
 public class FarmUtil {
 
@@ -34,13 +32,13 @@ public class FarmUtil {
         cropStr = cropStr.toUpperCase();
         Crop crop = new Crop(cropStr);
         if (crop.getMaterial() == Material.AIR) {
-            player.sendMessage(color("&b桃花源>>>&c没有找到这个农作物"));
+            player.sendMessage(color("&c没有找到这个农作物"));
             return;
         }
         SQLRow playerRow = DataUtil.getPlayerData(player);
         int count = playerRow.getInt(cropStr, 0);
         Inventory inventory = Bukkit.createInventory(null, 54,
-                color("&d&l桃花源丨作物仓库"));
+                color("&b&l作物仓库"));
 
         inventory.setItem(45, getItem(Material.RED_STAINED_GLASS_PANE, 1, "&c返回菜单"));
         inventory.setItem(46, PANE);
@@ -106,12 +104,12 @@ public class FarmUtil {
                     count += Objects.requireNonNull(inventory.getItem(i)).getAmount();
                 } else {
                     inventory.setItem(i, new ItemStack(Material.AIR));
-                    if (BasicUtil.isInventoryFull(player)) {
+                    if (isInventoryFull(player)) {
                         player.getWorld().dropItem(player.getLocation(), item);
-                        player.sendMessage(PREFIX + color("&c请勿放入非作物,已掉落地面"));
+                        player.sendMessage(color("&c请勿放入非作物,已掉落地面"));
                     } else {
                         player.getInventory().addItem(item);
-                        player.sendMessage(PREFIX + color("&c请勿放入非作物,已返还背包"));
+                        player.sendMessage(color("&c请勿放入非作物,已返还背包"));
                     }
                 }
             }
@@ -123,6 +121,25 @@ public class FarmUtil {
         }
         DataUtil.setPlayerData(player, crop, totalItems);
         inventory.setItem(49, new ItemStack(Material.AIR));
+    }
+
+    /**
+     * 玩家背包是否已满
+     * @param player 玩家
+     * @return 是否已满
+     */
+    public static boolean isInventoryFull(Player player) {
+        return isInventoryFull(player.getInventory());
+    }
+
+    public static boolean isInventoryFull(Inventory inventory) {
+        for (int i = 0; i < 36; i++) {
+            ItemStack item = inventory.getItem(i);
+            if (item == null || item.getType() == Material.AIR) {
+                return false;
+            }
+        }
+        return true;
     }
 
     /**

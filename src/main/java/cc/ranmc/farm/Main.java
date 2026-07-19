@@ -6,9 +6,7 @@ import cc.ranmc.farm.command.FarmAutoComplete;
 import cc.ranmc.farm.command.FarmCommand;
 import cc.ranmc.farm.listener.FarmListener;
 import cc.ranmc.farm.papi.Papi;
-import cc.ranmc.farm.papi.RanmcPapi;
 import cc.ranmc.farm.util.DataUtil;
-import cc.ranmc.papi.PapiAPI;
 import lombok.Getter;
 
 import org.bstats.bukkit.Metrics;
@@ -70,16 +68,9 @@ public class Main extends JavaPlugin implements Listener {
 	 * 加载配置
 	 */
 	public void loadConfig() {
-
 		if (Bukkit.getPluginManager().getPlugin("PlaceholderAPI") != null) {
 			new Papi().register();
 			print("&b[作物仓库] §a成功载入PlaceholderAPI");
-		}
-
-		if (Bukkit.getPluginManager().getPlugin("Ranmc") != null) {
-			PapiAPI.registerHandler(new RanmcPapi("fm"));
-			print("&b[作物仓库] §a成功载入Ranmc");
-			ranmc = true;
 		}
 	}
 	
